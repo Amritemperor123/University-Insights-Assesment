@@ -1,0 +1,320 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: auto;
+    width: 100%;
+    margin: 0px;
+    border: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow-x: hidden;
+    background-color: black;
+}
+.hero, .info, .form-container{
+    height: 70vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+}
+.hero{
+    background-image: url('https://www.mua.edu/uploads/sites/10/2023/02/istock-482499394.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.hero::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.heroleft, .heroright{
+    height: 100%;
+    width: 50vw;
+}
+.hero a{
+    text-decoration: none;
+    color: white;
+}
+h1{
+    color: white;
+    position: relative;
+}
+.heroleft{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.heroleft .link{
+    width: 20vw;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-left: 5vw;
+    background-color: transparent;
+    border: white solid 5px;
+    border-radius: 20px;
+    font-size: 2.5vh;
+    text-align: center;
+    position: relative;
+}
+.heroleft .company{
+    height: 10vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    position: relative;
+    font-size: 2vh;
+    margin-left: 2vw;
+}
+.logo{
+    height: 7vh;
+    width: 7vh;
+    border-radius: 50%;
+    background-color: white;
+}
+.heroright .link{
+    width: 40vw;
+    padding-top: 20%;
+    padding-bottom: 1px;
+    margin-left: 5vw;
+    color: white;
+    background-color: transparent;
+    box-shadow: 0 5px 0 ;
+    font-size: 3vh;
+    text-align: right;
+    position: relative;
+}
+.info-container{
+    height: 60vh;
+    width: 30vw;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 5px solid black;
+    border-radius: 20px;
+}
+.heading{
+    height: 50vh;
+    width: 25vw;
+}
+.apply{
+    height: 10vh;
+    width: 25vw;
+    text-align: right;
+}
+h2{
+    font-size: 4vh;
+}
+li{
+    font-size: 3vh;
+    list-style-type: none;
+}
+.info-container a{
+    font-size: 3.5vh;
+    font-weight: bolder;
+    text-decoration: none;
+    color: black;
+}
+.form{
+    height: 100%;
+    width: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#application-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+label {
+    margin-top: 10px;
+    font-size: 2.5vh;
+    font-weight: bold;
+}
+input, select {
+    width: 40vw;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 5px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 2.5vh;
+}
+button {
+    width: 15vw;
+    margin-top: 5vh;
+    margin-left: 12.5vw;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 2.5vh;
+    font-weight: bolder;
+}
+button:hover {
+    background: #0056b3;
+}
+.banner {
+    width: 50%;
+    height: 70vh;
+    border-radius: 50px 0 0 0;
+    background-image: url('https://thinkinginenglish.blog/wp-content/uploads/2024/03/pexels-picjumbocom-210661.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.banner::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px 0 0 0;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.header{
+    height: auto;
+    width: 100%;
+    text-align: left;
+    margin-left: 5vw;
+    margin-top: 5vh;
+    color: white;
+    position: relative;
+    font-size: 2.5vh;
+}
+.notification {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #28a745;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+/* Responsive CSS */
+@media (max-width: 1024px) {
+    .hero, .info, .form-container {
+        flex-direction: column;
+        height: auto;
+    }
+    .heroleft, .heroright {
+        width: 100%;
+        text-align: center;
+    }
+    .hero .link {
+        width: 60%;
+        margin: auto;
+    }
+    .info-container {
+        width: 80%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    input, select {
+        width: 90%;
+    }
+    button {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .form {
+        width: 100%;
+    }
+    .banner {
+        width: 100%;
+        border-radius: 0;
+        height: 50vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-container {
+        width: 90%;
+    }
+    .heading h2 {
+        font-size: 3vh;
+    }
+    li {
+        font-size: 2.5vh;
+    }
+    .form {
+        width: 100%;
+    }
+    #application-form {
+        width: 90%;
+    }
+    .banner {
+        height: 40vh;
+    }
+    .header {
+        text-align: center;
+        font-size: 2vh;
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 3vh;
+        text-align: center;
+    }
+    .heroleft .link, .heroright .link {
+        font-size: 2vh;
+        width: 80%;
+    }
+    .info-container {
+        width: 95%;
+        padding: 10px;
+    }
+    li {
+        font-size: 2vh;
+    }
+    input, select {
+        width: 100%;
+        font-size: 2vh;
+    }
+    button {
+        width: 70%;
+        font-size: 2vh;
+    }
+    .form {
+        padding: 20px;
+    }
+    .banner {
+        height: 30vh;
+    }
+    .header {
+        font-size: 1.8vh;
+    }
+}

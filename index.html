@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study MBBS Abroad | University Insights</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="hero">
+        <div class="heroleft">
+            <div class="company">
+                <div class="logo"></div>
+                <h1>&nbsp;University Insights</h1>
+            </div>
+            <div class="link">
+                <h1>
+                    <a href="#form"><i class="fa-solid fa-pen-to-square"></i>&nbsp;Apply Now</a>
+                </h1>
+            </div>
+        </div>
+        <div class="heroright">
+            <div class="link">
+                <h1>
+                    <a href="#form"><i class="fa-solid fa-quote-left"></i>Get your MBBS degree by studying abroad with University Insights!&nbsp;<i class="fa-solid fa-quote-right"></i></a>
+                </h1>
+            </div>
+        </div>
+    </div>
+    <div class="info">
+        <div class="info-container">
+            <div class="heading">
+                <h2>Why go Abroad?</h2>
+                <ul>
+                    <li><i class="fa-solid fa-paper-plane"></i>&nbsp;Affordable Tution</li>
+                    <li><i class="fa-solid fa-paper-plane"></i>&nbsp;International Exposure</li>
+                    <li><i class="fa-solid fa-paper-plane"></i>&nbsp;Modern Labs</li>
+                    <li><i class="fa-solid fa-paper-plane"></i>&nbsp;Better Curriculum</li>
+                </ul>
+            </div>
+            <div class="apply">
+                <a href="#form">
+                    <i class="fa-solid fa-pen-to-square"></i>&nbsp;Apply
+                </a>
+            </div>
+        </div>
+        <div class="info-container">
+            <div class="heading">
+                <h2>Top Countries:</h2>
+                <ul>
+                    <li><i class="fa-solid fa-paper-plane"></i>&nbsp;Russia</li>
+                    <li><i class="fa-solid fa-paper-plane"></i>&nbsp;Uzbekistan</li>
+                    <li><i class="fa-solid fa-paper-plane"></i>&nbsp;Kazakhstan</li>
+                    <li><i class="fa-solid fa-paper-plane"></i>&nbsp;Philippines</li>
+                    <li><i class="fa-solid fa-paper-plane"></i>&nbsp;Georgia</li>
+                    <li><i class="fa-solid fa-paper-plane"></i>&nbsp;Kyrgyzstan</li>
+                    <li><i class="fa-solid fa-paper-plane"></i>&nbsp;Egypt</li>
+                </ul>
+            </div>
+            <div class="apply">
+                <a href="#form">
+                    <i class="fa-solid fa-pen-to-square"></i>&nbsp;Apply
+                </a>
+            </div>
+        </div>
+        <div class="info-container">
+            <div class="heading">
+                <h2>Admission Process:</h2>
+                <ul>
+                    <li><i class="fa-solid fa-paper-plane"></i>&nbsp;Check Eligibility Requirements</li>
+                    <li><i class="fa-solid fa-paper-plane"></i>&nbsp;Choose Your Preferred Country & University</li>
+                    <li><i class="fa-solid fa-paper-plane"></i>&nbsp;Submit Application & Required Documents</li>
+                    <li><i class="fa-solid fa-paper-plane"></i>&nbsp;Receive Admission Confirmation</li>
+                    <li><i class="fa-solid fa-paper-plane"></i>&nbsp;Apply for Visa & Prepare for Departure</li>
+                </ul>
+            </div>
+            <div class="apply">
+                <a href="#form">
+                    <i class="fa-solid fa-pen-to-square"></i>&nbsp;Apply
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="form-container">
+        <div class="form" id="form">
+            <form id="application-form" action="/" method="get">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="country">Preferred Country:</label>
+                <select id="country" name="country">
+                    <option value="Russia">Russia</option>
+                    <option value="Uzbekistan">Uzbekistan</option>
+                    <option value="Kazakhstan">Kazakhstan</option>
+                    <option value="Philippines">Philippines</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Kyrgyzstan">Kyrgyzstan</option>
+                    <option value="Egypt">Egypt</option>
+                </select>
+                
+                <button type="submit">Apply Now</button>
+            </form>
+        </div>
+        <div class="banner">
+            <div class="header">
+                <p><i class="fa-solid fa-envelope"></i>&nbsp;Email us at: </p>
+                <p><i class="fa-solid fa-headset"></i>&nbsp;Call us at: </p>
+            </div>
+        </div>
+    </div>
+    <div id="notification" class="notification">You've applied successfully!</div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("application-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            
+            let isValid = true;
+            let name = document.getElementById("name");
+            let email = document.getElementById("email");
+            let phone = document.getElementById("phone");
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let phonePattern = /^[0-9]{10}$/;
+            
+            document.querySelectorAll(".error").forEach(e => e.remove());
+            
+            if (name.value.trim() === "") {
+                showError(name, "Name is required");
+                isValid = false;
+            }
+            if (!emailPattern.test(email.value)) {
+                showError(email, "Enter a valid email");
+                isValid = false;
+            }
+            if (!phonePattern.test(phone.value)) {
+                showError(phone, "Enter a valid 10-digit phone number");
+                isValid = false;
+            }
+            
+            if (isValid) {
+                showNotification("You've applied successfully!");
+                this.reset();
+            }
+        });
+    });
+
+    function showError(input, message) {
+        let error = document.createElement("div");
+        error.className = "error";
+        error.innerText = message;
+        input.parentNode.insertBefore(error, input.nextSibling);
+    }
+
+    function showNotification(message) {
+        let notification = document.createElement("div");
+        notification.style.position = "fixed";
+        notification.style.bottom = "20px";
+        notification.style.left = "50%";
+        notification.style.transform = "translateX(-50%)";
+        notification.style.background = "green";
+        notification.style.color = "white";
+        notification.style.padding = "10px 20px";
+        notification.style.borderRadius = "5px";
+        notification.innerText = message;
+        document.body.appendChild(notification);
+        setTimeout(() => notification.remove(), 3000);
+    }
+    </script>
+</body>
